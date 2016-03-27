@@ -1,0 +1,41 @@
+public void merge(Linkedlist aList,Linkedlist bList){
+		Linkedlist.Node first=aList.head;
+		Linkedlist.Node second=bList.head;
+		Linkedlist.Node head3=aList.head, temp=head3;
+		
+		
+		if(first.data<second.data){
+			head3=first;
+			first=first.next;
+	
+				}else{
+					head3=second;
+					second=second.next;
+			}
+		temp=head3;
+		while(first!=null&&second!=null){
+			if(first.data<second.data){
+				head3.next=first;
+				head3=head3.next;
+				first=first.next;
+			}else{
+				head3.next=second;
+				head3=head3.next;
+				second=second.next;
+			}
+		
+		}
+		if(first!=null){
+			head3.next=first;
+			
+		}
+		if(second!=null){
+			head3.next=second;
+		}
+		System.out.println();
+		while(temp!=null){
+			System.out.print(temp.data +" ");
+			temp=temp.next;
+		}
+		
+	}
